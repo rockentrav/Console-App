@@ -1,0 +1,245 @@
+2025-04-21 20:55:45 INFO  Version:%: - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 20:55:46 INFO  RegionFactoryInitiator:%: - HHH000026: Second-level cache disabled
+2025-04-21 20:55:46 WARN  pooling:%: - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 20:55:46 INFO  pooling:%: - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 20:55:46 INFO  pooling:%: - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 20:55:46 INFO  pooling:%: - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 20:55:46 INFO  pooling:%: - HHH10001003: Autocommit mode: false
+2025-04-21 20:55:46 INFO  pooling:%: - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 20:55:46 WARN  JdbcEnvironmentInitiator:%: - HHH000342: Could not obtain connection to query metadata
+org.hibernate.boot.registry.selector.spi.StrategySelectionException: Unable to resolve name [org.hibernate.dialect.PostgresSQLDialect] as strategy [org.hibernate.dialect.Dialect]
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:154)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:236)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.resolveStrategy(StrategySelectorImpl.java:189)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.constructDialect(DialectFactoryImpl.java:122)
+	at org.hibernate.engine.jdbc.dialect.internal.DialectFactoryImpl.buildDialect(DialectFactoryImpl.java:87)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$1.execute(JdbcEnvironmentInitiator.java:324)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$1.execute(JdbcEnvironmentInitiator.java:274)
+	at org.hibernate.jdbc.WorkExecutor.executeReturningWork(WorkExecutor.java:58)
+	at org.hibernate.jdbc.AbstractReturningWork.accept(AbstractReturningWork.java:34)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:70)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:273)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:105)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:66)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:129)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:223)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:191)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:169)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.build(MetadataBuildingProcess.java:128)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:451)
+	at org.hibernate.boot.internal.MetadataBuilderImpl.build(MetadataBuilderImpl.java:102)
+	at org.hibernate.cfg.Configuration.buildSessionFactory(Configuration.java:910)
+	at org.consoleapp.util.HibernateUtil.<clinit>(HibernateUtil.java:16)
+	at org.consoleapp.Main.main(Main.java:13)
+Caused by: org.hibernate.boot.registry.classloading.spi.ClassLoadingException: Unable to load class [org.hibernate.dialect.PostgresSQLDialect]
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:126)
+	at org.hibernate.boot.registry.selector.internal.StrategySelectorImpl.selectStrategyImplementor(StrategySelectorImpl.java:150)
+	... 26 more
+Caused by: java.lang.ClassNotFoundException: Could not load requested class : org.hibernate.dialect.PostgresSQLDialect
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:216)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:593)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+	at java.base/java.lang.Class.forName0(Native Method)
+	at java.base/java.lang.Class.forName(Class.java:534)
+	at java.base/java.lang.Class.forName(Class.java:513)
+	at org.hibernate.boot.registry.classloading.internal.ClassLoaderServiceImpl.classForName(ClassLoaderServiceImpl.java:123)
+	... 27 more
+Caused by: java.lang.Throwable
+	at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:209)
+	... 33 more
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.PostgresSQLDialect
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 33 more
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.PostgresSQLDialect
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 33 more
+	Suppressed: java.lang.ClassNotFoundException: org.hibernate.dialect.PostgresSQLDialect
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:526)
+		at org.hibernate.boot.registry.classloading.internal.AggregatedClassLoader.findClass(AggregatedClassLoader.java:206)
+		... 33 more
+2025-04-21 21:03:36 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:03:37 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:03:37 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:03:37 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:03:37 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:03:37 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:03:37 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:03:37 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:03:38 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:03:38 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:14:53 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:14:54 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:14:54 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:14:54 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:14:54 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:14:54 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:14:54 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:14:54 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:14:54 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:14:55 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:19:35 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:19:35 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:19:35 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:19:35 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:19:35 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:19:35 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:19:35 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:19:35 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:19:35 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:19:36 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:27:08 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:27:09 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:27:09 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:27:09 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:27:09 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:27:09 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:27:09 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:27:09 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:27:09 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:27:10 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:29:55 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:29:55 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:29:55 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:29:55 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:29:55 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:29:55 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:29:55 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:29:55 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:29:55 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:29:56 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:31:31 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:31:31 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:31:31 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:31:31 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:31:31 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:31:31 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:31:31 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:31:31 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:31:31 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:31:32 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:32:20 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:32:21 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:32:21 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:32:21 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:32:21 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:32:21 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:32:21 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:32:21 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:32:21 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:32:22 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:34:21 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:34:22 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:34:22 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:34:22 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:34:22 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:34:22 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:34:22 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:34:22 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:34:22 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:34:23 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:36:22 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:36:22 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:36:22 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:36:22 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:36:22 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:36:22 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:36:22 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:36:22 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:36:22 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:36:23 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:44:16 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:44:17 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:44:17 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:44:17 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:44:17 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:44:17 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:44:17 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:44:17 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:44:17 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:44:18 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:45:41 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:45:41 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:45:41 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:45:41 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:45:41 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:45:41 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:45:41 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:45:41 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:45:41 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:45:42 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:47:56 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:47:56 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:47:57 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:47:57 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:47:57 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:47:57 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:47:57 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:47:57 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:47:57 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:47:57 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 21:53:12 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 21:53:12 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 21:53:12 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 21:53:12 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 21:53:12 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 21:53:12 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 21:53:12 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 21:53:12 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 21:53:13 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 21:53:13 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 22:02:06 INFO  Version:44 - HHH000412: Hibernate ORM core version 6.3.1.Final
+2025-04-21 22:02:06 INFO  RegionFactoryInitiator:50 - HHH000026: Second-level cache disabled
+2025-04-21 22:02:06 WARN  pooling:80 - HHH10001002: Using built-in connection pool (not intended for production use)
+2025-04-21 22:02:06 INFO  pooling:135 - HHH10001005: Loaded JDBC driver class: org.postgresql.Driver
+2025-04-21 22:02:06 INFO  pooling:157 - HHH10001012: Connecting with JDBC URL [jdbc:postgresql://localhost:5432/console_app]
+2025-04-21 22:02:06 INFO  pooling:166 - HHH10001001: Connection properties: {password=****, user=postgres}
+2025-04-21 22:02:06 INFO  pooling:170 - HHH10001003: Autocommit mode: false
+2025-04-21 22:02:06 INFO  pooling:366 - HHH10001115: Connection pool size: 20 (min=1)
+2025-04-21 22:02:06 WARN  deprecation:152 - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-04-21 22:02:07 INFO  JtaPlatformInitiator:58 - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-04-21 22:02:07 INFO  access:52 - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@574059d5] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2025-04-21 22:02:07 DEBUG SQL:135 - 
+    create table users (
+        id bigserial not null,
+        age integer not null,
+        created_at timestamp(6) not null,
+        email varchar(255) not null,
+        name varchar(255) not null,
+        primary key (id)
+    )
+2025-04-21 22:02:07 DEBUG SQL:135 - 
+    alter table if exists users 
+       drop constraint if exists UK_6dotkott2kjsp8vw4d0m25fb7
+2025-04-21 22:02:07 WARN  SqlExceptionHelper:238 - SQL Warning Code: 0, SQLState: 00000
+2025-04-21 22:02:07 WARN  SqlExceptionHelper:239 - constraint "uk_6dotkott2kjsp8vw4d0m25fb7" of relation "users" does not exist, skipping
+2025-04-21 22:02:07 DEBUG SQL:135 - 
+    alter table if exists users 
+       add constraint UK_6dotkott2kjsp8vw4d0m25fb7 unique (email)
+2025-04-21 22:02:41 DEBUG SQL:135 - 
+    insert 
+    into
+        users
+        (age, created_at, email, name) 
+    values
+        (?, ?, ?, ?)
+2025-04-21 22:02:58 DEBUG SQL:135 - 
+    select
+        u1_0.id,
+        u1_0.age,
+        u1_0.created_at,
+        u1_0.email,
+        u1_0.name 
+    from
+        users u1_0
